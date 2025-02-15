@@ -1,8 +1,9 @@
 import React from 'react'
+import SearchContainer from '../container/SearchContainer'
 
 const SearchPage = () => {
   return (
-    <div>SearchPage</div>
+    <SearchContainer/>
   )
 }
 

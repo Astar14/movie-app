@@ -1,13 +1,18 @@
+import { Route, Routes } from 'react-router-dom'
+import Layout from './Layout/Layout'
+import HomePage from './pages/HomePage'
 import './App.css'
-import MovieCard from './component/MovieCard'
-import Navbar from './component/Navbar'
+
 
 function App() {
 
   return (
     <>
-      <Navbar />
-      <MovieCard/>
+      <Layout>
+        <Routes>
+          <Route path='/' element={ <HomePage /> } />
+        </Routes>
+      </Layout>      
     </>
   )
 }

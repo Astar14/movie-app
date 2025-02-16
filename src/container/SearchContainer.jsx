@@ -19,6 +19,8 @@ const SearchContainer = () => {
     useEffect(() => {
         fetchData(searchParam)
     }, [searchParam])
+
+    if (loading) return <div className='loader'> </div>
     return (
         <div className='bg-gray-800'>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center gap-y-10 pb-10 pt-10'>

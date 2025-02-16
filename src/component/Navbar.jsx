@@ -32,7 +32,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav >
-            <SearchContainer search={search} />
+            {/* <SearchContainer search={search} /> */}
         </>
     )
 }

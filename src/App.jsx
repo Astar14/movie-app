@@ -6,6 +6,7 @@ import TopRatedPage from './pages/TopRatedPage'
 import UpcomingPage from './pages/UpcomingPage'
 import SearchPage from './pages/SearchPage'
 import MovieDetails from './container/MovieDetails'
+import Cast from './component/Cast'
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
           <Route path='/top-rated' element={<TopRatedPage />} />
           <Route path='/upcoming' element={<UpcomingPage />} />
           <Route path='/search' element={<SearchPage />} />
-          <Route path='/:movieId' element={<MovieDetails/>}/>
+          <Route path='/:movieId' element={<MovieDetails />} />
         </Routes>
       </Layout>
     </>

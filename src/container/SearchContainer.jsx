@@ -4,7 +4,7 @@ import { apiKey } from '../config'
 
 const SearchContainer = ({ search }) => {
     const [movieData, setMovieData] = useState([])
-    const [oading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true)
 
     const fetchData = async (search) => {
         const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${search}&page=1`)

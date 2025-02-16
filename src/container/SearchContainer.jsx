@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import MovieCard from '../component/MovieCard'
 import { apiKey } from '../config'
+import { useLocation } from 'react-router-dom'
 
-const SearchContainer = ({ search }) => {
+const SearchContainer = () => {
     const [movieData, setMovieData] = useState([])
     const [loading, setLoading] = useState(true)
+    const location = useLocation()
+    const searchParam = location.search.slice(1)
 
-    const fetchData = async (search) => {
-        const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${search}&page=1`)
+    const fetchData = async (searchParam) => {
+        const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${searchParam}&page=1`)
         const data = await response.json()
-        console.log(data)
-        console.log(data.results)
         setMovieData(data.results)
         setLoading(false)
     }
 
     useEffect(() => {
-        fetchData(search)
-    }, [search])
+        fetchData(searchParam)
+    }, [searchParam])
     return (
         <div className='bg-gray-800'>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center gap-y-10 pb-10 pt-10'>

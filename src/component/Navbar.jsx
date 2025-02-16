@@ -24,15 +24,14 @@ const Navbar = () => {
                             placeholder="Search movies..."
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
-                            className="bg-transparent outline-none text-white placeholder-gray-400"
+                            className="bg-transparent outline-none text-white placeholder-white border border-white px-2"
                         />
-                        <button className="bg-yellow-500 text-gray-900 px-4 py-1 rounded-lg hover:bg-yellow-400 cursor-pointer" onClick={() => navigate('/search')}>
+                        <button className="bg-yellow-500 text-gray-900 px-4 py-1 rounded-lg hover:bg-yellow-400 cursor-pointer" onClick={() => navigate(`/search?${search}`)}>
                             Search
                         </button>
                     </div>
                 </div>
             </nav >
-            {/* <SearchContainer search={search} /> */}
         </>
     )
 }

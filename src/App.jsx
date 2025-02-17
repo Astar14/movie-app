@@ -6,7 +6,6 @@ import TopRatedPage from './pages/TopRatedPage'
 import UpcomingPage from './pages/UpcomingPage'
 import SearchPage from './pages/SearchPage'
 import MovieDetails from './container/MovieDetails'
-import Cast from './component/Cast'
 
 
 function App() {

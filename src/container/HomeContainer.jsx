@@ -74,8 +74,6 @@ const HomeContainer = () => {
                     Next
                 </button>
             </div>
-
-
         </div>
 
 

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { imageBaseUrl } from "../config";
 
 const MovieCard = ({ movie }) => {
 
@@ -7,7 +8,7 @@ const MovieCard = ({ movie }) => {
     <Link to={`/${movie.id}`} className="shadow-lg">
       <div className="w-[250px] bg-black p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300">
         <img
-          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+          src={`${imageBaseUrl}/${movie.poster_path}`}
           alt="moviename"
           className="w-full h-[300px] object-cover rounded-lg"
         />

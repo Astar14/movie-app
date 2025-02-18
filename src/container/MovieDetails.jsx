@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { apiKey, apiUrl } from '../config'
+import { apiKey, apiUrl, imageBaseUrl } from '../config'
 import Cast from '../component/Cast'
 
 const MovieDetails = () => {
@@ -53,13 +53,13 @@ const MovieDetails = () => {
 
                 <div className="max-w-[1200px] mx-auto pt-3 flex flex-col md:flex-row gap-3 mt-10 px-4">
                     <img
-                        src={`https://image.tmdb.org/t/p/w500/${getMovieData.poster_path}`}
+                        src={`${imageBaseUrl}/${getMovieData.poster_path}`}
                         alt=""
                         className="rounded-2xl w-full md:w-[400px] h-[400px] object-cover"
                     />
                     <div>
                         <p className="text-gray-300 text-lg md:text-2xl mb-1 mt-2">{getMovieData.overview}</p>
-                        <p className="text-lg md:text-2xl text-gray-300 mb-1">Runtime: {getMovieData.runtime}</p>
+                        <p className="text-lg md:text-2xl text-gray-300 mb-1">Runtime: {getMovieData.runtime} Min</p>
                         <h3 className="text-lg md:text-2xl text-gray-300 mb-1">Release date: {getMovieData.release_date}</h3>
                         <h2 className="text-lg md:text-2xl text-gray-300 mb-1">Status: {getMovieData.status}</h2>
                         <div className="flex flex-wrap gap-2 mt-5">
@@ -74,7 +74,7 @@ const MovieDetails = () => {
 
                 <div className="max-w-[1200px] mx-auto mt-10 px-4">
                     <h1 className="text-3xl md:text-5xl text-white">Cast</h1>
-                    <div className="flex gap-4 overflow-x-auto mt-6 text-white whitespace-nowrap pb-4">
+                    <div className="flex gap-4 overflow-x-auto pl-4 mt-6 text-white whitespace-nowrap pb-4">
                         {castData.map((cast, index) => (
                             <Cast cast={cast} key={`cast-${index}`} />
                         ))}
